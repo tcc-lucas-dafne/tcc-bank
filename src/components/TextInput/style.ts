@@ -7,7 +7,6 @@ interface LabelProps {
 export const Input = styled.input`
   border: 1px solid grey;
   border-radius: 6px;
-  padding: 22px;
   color: #000;
   outline: none;
   font-size: 18px;
