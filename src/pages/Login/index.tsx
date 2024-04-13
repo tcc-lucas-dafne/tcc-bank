@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Container } from "./style";
 import TextInput from "../../components/TextInput";
+import User from "../../services/user";
+import { toast } from "react-toastify";
 
 type AccessForm = {
   email?: string;
@@ -10,7 +12,6 @@ type AccessForm = {
 }
 
 const Login = () => {
-  const [showLoginForm, setShowLoginForm] = useState<boolean>(false);
   const [accessForm, setAccessForm] = useState<AccessForm>({});
   const [activeView, setActiveView] = useState<"LOGIN" | "REGISTER">("LOGIN");
 
@@ -18,8 +19,30 @@ const Login = () => {
     setAccessForm((currState) => ({ ...currState, [event.target.name]: event.target.value }));
   };
 
-  const login = () => {
+  const login = async () => {
+    try {
+      if (!accessForm.email || !accessForm.password) return;
+      const response = await User.login({ email: accessForm.email, password: accessForm.password });
+      if (response.status === 200) {
+        const { token } = response.data;
+        localStorage.setItem("token", token);
+        // REDIRECT
+      }
+    } catch (error: unknown) {
+      console.error('[login]: ', error);
+    }
+  };
 
+  const register = async () => {
+    try {
+      if (!accessForm.name || !accessForm.email || !accessForm.password || accessForm.password !== accessForm.passwordConfirmation) return;
+      const response = await User.createUser({ name: accessForm.name, email: accessForm.email, password: accessForm.password })  
+      if (response.status === 201) {
+        toast.success("Conta criada com sucesso!");
+      }
+    } catch (error: unknown) {
+      console.error('[register]: ', error);
+    }
   };
 
   const switchToCreate = () => {
@@ -123,7 +146,7 @@ const Login = () => {
                 <p className="mb-0.5 cursor-pointer" onClick={switchToLogin}>Já possuo uma conta</p>
               </div>
               <button 
-                onClick={login} 
+                onClick={register} 
                 disabled={isRegisterFormValid()}
                 className="w-full bg-black disabled:bg-black text-white rounded-md py-2 mt-5"
               >
