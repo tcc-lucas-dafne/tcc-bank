@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { Container } from "./style";
 import TextInput from "../../components/TextInput";
-import User from "../../services/user";
+import User from "../../services/account";
 import { toast } from "react-toastify";
+import { useAppContext } from "../../context";
+import { Navigate } from "react-router-dom";
 
 type AccessForm = {
   email?: string;
@@ -26,7 +28,7 @@ const Login = () => {
       if (response.status === 200) {
         const { token } = response.data;
         localStorage.setItem("token", token);
-        // REDIRECT
+        window.location.reload();
       }
     } catch (error: unknown) {
       console.error('[login]: ', error);
