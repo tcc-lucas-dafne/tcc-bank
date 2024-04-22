@@ -2,7 +2,7 @@ import { API } from "./index";
 
 function login(data: Login) {
   try {
-    return API.post("/user/login", data)
+    return API.post("/account/login", data)
   } catch (err) {
     console.error("login: ", err);
     throw err;
@@ -11,7 +11,7 @@ function login(data: Login) {
 
 function getUser() {
   try {
-    return API.get("/user")
+    return API.get("/account")
   } catch (err) {
     console.error("getUser: ", err);
     throw err;
@@ -20,7 +20,7 @@ function getUser() {
 
 function createUser(data: Register) {
   try {
-    return API.post("/user/register", data)
+    return API.post("/account/register", data)
   } catch (err) {
     console.error("createUser: ", err);
     throw err;
