@@ -8,3 +8,8 @@ type Register = {
   email: string;
   password: string;
 }
+
+type User = {
+  name: string;
+  email: string;
+}
