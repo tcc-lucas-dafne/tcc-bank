@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  tcc-bank:
+    container_name: frontend_tcc_bank
+    build: .
+    ports:
+      - 3000:3000
+    environment: 
+      PORT: 3000
+    volumes:
+      - ./:/code
+      - node_modules:/code/node_modules
+    networks: 
+      - frontend_tcc_bank
+
+volumes: 
+  node_modules:
+
+networks: 
+  frontend_tcc_bank:
