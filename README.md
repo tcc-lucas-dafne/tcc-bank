@@ -1,7 +1,7 @@
 
 ## Sobre
 
-A aplicação bancária é utilizada para a 
+A aplicação bancária é uma Prova de Conceito que visa replicar em menor escala um sistema bancário. 
 
 Surgiu a partir de um projeto de TCC de alunos da Universidade de Brasília - Campus Gama direcionado à segurança de software. O projeto busca demonstrar um pipeline DevSecOps.
 
