@@ -1,12 +1,18 @@
 import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import UserService from "../../services/account";
+import { useAppContext } from "../../context";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from "@fortawesome/free-regular-svg-icons"
+import { toast } from "react-toastify";
 
 const UserUpdate = () => {
   const [file, setFile] = useState<File | null>(null);
+  const { user } = useAppContext()
 
   const [userData, setUserData] = useState({
-    name: '',
-    email: '',
+    imageUrl: '',
+    name: user?.name,
+    email: user?.email,
     password: '',
   });
 
@@ -45,9 +51,17 @@ const UserUpdate = () => {
     });
   };
 
-  const handleUserDataSubmit = (e: any) => {
+  const handleUserDataSubmit = async (e: any) => {
     e.preventDefault();
-    // TODO: Atualização usuario
+
+    if (userData.imageUrl) {
+      try {
+        await UserService.uploadUserImage({ url: userData.imageUrl });
+      } catch (err) {
+        // TODO: Ver se está pegando
+        toast.info("Erro ao atualizar dados");
+      }
+    }
   };
 
   const handlePasswordDataSubmit = (e: any) => {
@@ -72,7 +86,7 @@ const UserUpdate = () => {
     formData.append('document', file);
 
     try {
-      const response = await UserService.uploadDocument(formData)
+      await UserService.uploadDocument(formData)
     } catch (error) {
       alert('Error uploading file');
     }
@@ -83,6 +97,24 @@ const UserUpdate = () => {
       <div className="max-w-lg mt-10">
         <form onSubmit={handleUserDataSubmit} className="bg-white shadow-md rounded-lg p-6">
           <h4 className="text-2xl font-bold mb-4">Atualizar Dados de Usuario</h4>
+          <div className="flex justify-center mb-4">
+            {user?.image ? (
+              <img alt="user" className="max-w-52 max-w-40" src={`data:image/png;base64,${user.image}`} />
+            ) : (
+              <FontAwesomeIcon icon={faUser} className="fa-5x cursor-pointer" />
+            )}
+          </div>
+          <div className="mb-4">
+            <label htmlFor="name" className="block text-gray-700 mb-2 text-left">URL Imagem:</label>
+            <input
+              type="url"
+              id="image-url"
+              name="imageUrl"
+              value={userData.imageUrl}
+              onChange={handleUserDataChange}
+              className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
           <div className="mb-4">
             <label htmlFor="name" className="block text-gray-700 mb-2 text-left">Name:</label>
             <input
@@ -122,6 +154,7 @@ const UserUpdate = () => {
             type="submit"
             className={`w-full px-4 py-2 bg-blue-500 text-white rounded-md ${!isUserDataValid && 'opacity-50 cursor-not-allowed'}`}
             disabled={!isUserDataValid}
+            onClick={handleUserDataSubmit}
           >
             Atualizar
           </button>

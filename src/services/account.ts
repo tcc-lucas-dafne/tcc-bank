@@ -31,6 +31,15 @@ function updateUser() {
   // TODO: user update
 }
 
+function uploadUserImage(data: UploadUserImage) {
+  try {
+    return API.post("/upload-image", data)
+  } catch (err) {
+    console.error("uploadUserImage: ", err);
+    throw err;
+  }
+}
+
 function uploadDocument(formData: any) {
   try {
     return API.post("/upload-document", formData)
@@ -44,7 +53,8 @@ const UserService = {
   login,
   getUser,
   createUser,
-  uploadDocument
+  uploadDocument,
+  uploadUserImage
 }
 
 export default UserService;

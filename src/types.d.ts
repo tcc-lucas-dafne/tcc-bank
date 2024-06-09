@@ -17,6 +17,11 @@ type AccountDetail = {
 type Account = {
   name: string;
   email: string;
+  image?: string;
+}
+
+type UploadUserImage = {
+  url: string;
 }
 
 type User = Account & AccountDetail
