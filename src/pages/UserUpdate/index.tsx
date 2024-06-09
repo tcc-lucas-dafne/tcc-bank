@@ -1,4 +1,5 @@
 import { ChangeEvent, FormEvent, useEffect, useState } from "react";
+import UserService from "../../services/account";
 
 const UserUpdate = () => {
   const [file, setFile] = useState<File | null>(null);
@@ -71,19 +72,14 @@ const UserUpdate = () => {
     formData.append('document', file);
 
     try {
-      const response = await fetch('http://localhost:3000/upload-document', {
-        method: 'POST',
-        body: formData,
-      });
-      const data = await response.json();
-      alert(JSON.stringify(data));
+      const response = await UserService.uploadDocument(formData)
     } catch (error) {
       alert('Error uploading file');
     }
   };
 
   return (
-    <div className="flex justify-between mx-10" style={{ backgroundImage: 'src()'}}>
+    <div className="flex justify-between mx-10" style={{ backgroundImage: 'src()' }}>
       <div className="max-w-lg mt-10">
         <form onSubmit={handleUserDataSubmit} className="bg-white shadow-md rounded-lg p-6">
           <h4 className="text-2xl font-bold mb-4">Atualizar Dados de Usuario</h4>
@@ -177,8 +173,8 @@ const UserUpdate = () => {
       </div>
 
       <div className="max-w-lg mt-10">
-        <h1 className="text-2xl font-bold mb-4">Envio de documento</h1>
         <form onSubmit={handleSubmit} className="bg-white shadow-md rounded-lg p-6">
+          <h1 className="text-2xl font-bold mb-4">Envio de documento</h1>
           <input
             type="file"
             onChange={handleFileChange}

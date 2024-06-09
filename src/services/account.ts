@@ -27,10 +27,24 @@ function createUser(data: Register) {
   }
 }
 
+function updateUser() {
+  // TODO: user update
+}
+
+function uploadDocument(formData: any) {
+  try {
+    return API.post("/upload-document", formData)
+  } catch (err) {
+    console.error("uploadDocument: ", err);
+    throw err;
+  }
+}
+
 const UserService = {
   login,
   getUser,
-  createUser
+  createUser,
+  uploadDocument
 }
 
 export default UserService;
