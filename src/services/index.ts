@@ -9,6 +9,13 @@ API.interceptors.request.use((config) => {
   if (accessToken) {
     config.headers.Authorization = `Bearer ${accessToken}`;
   }
-
   return config;
 })
+
+API.interceptors.response.use(function (response) {
+  return response;
+}, function (error) {
+  console.log('Token expirou');
+  localStorage.clear();
+  return Promise.reject(error);
+});
