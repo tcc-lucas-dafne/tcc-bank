@@ -1,10 +1,8 @@
-import { Navigate } from "react-router-dom";
 import { useAppContext } from "../../context";
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import { Box } from "@mui/material";
 import { formatCurrency } from "../../utils/format-currency";
-
 
 const Home = () => {
   const { user } = useAppContext();

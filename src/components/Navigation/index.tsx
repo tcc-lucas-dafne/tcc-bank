@@ -12,7 +12,7 @@ const Navigation = () => {
   };
 
   return (
-    <div className='flex bg-stone-400 py-4 px-4 items-center justify-between'>
+    <div className='flex bg-stone-400 py-4 px-4 items-center justify-between h-16'>
       <div className='flex items-center gap-2'>
         <FontAwesomeIcon icon={faBuildingColumns} size='2x' />
         <h1 className='text-xl font-bold'>MyBank</h1>

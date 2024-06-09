@@ -83,7 +83,7 @@ const UserUpdate = () => {
   };
 
   return (
-    <div className="flex justify-between mx-10">
+    <div className="flex justify-between mx-10" style={{ backgroundImage: 'src()'}}>
       <div className="max-w-lg mt-10">
         <form onSubmit={handleUserDataSubmit} className="bg-white shadow-md rounded-lg p-6">
           <h4 className="text-2xl font-bold mb-4">Atualizar Dados de Usuario</h4>

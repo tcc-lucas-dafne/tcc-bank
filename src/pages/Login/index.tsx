@@ -72,7 +72,7 @@ const Login = () => {
   };
 
   return (
-    <Container className="h-screen bg-gradient-to-r from-purple-500 to-pink-500">
+    <Container className="flex items-center justify-center flex-col h-screen bg-gradient-to-r from-purple-500 to-pink-500">
       <div className="bg-gradient-to-r from-cyan-500 to-blue-500 p-10 w-96 rounded-xl absolute left-48">
         <div className="flex flex-col gap-8">
           {activeView === "LOGIN" && (
