@@ -5,6 +5,7 @@ import User from "../../services/account";
 import { toast } from "react-toastify";
 import { useAppContext } from "../../context";
 import { Navigate } from "react-router-dom";
+import securityImage from '../../assets/security.png';
 
 type AccessForm = {
   email?: string;
@@ -72,17 +73,17 @@ const Login = () => {
   };
 
   return (
-    <Container className="flex items-center justify-center flex-col h-screen bg-gradient-to-r from-purple-500 to-pink-500">
-      <div className="bg-gradient-to-r from-cyan-500 to-blue-500 p-10 w-96 rounded-xl absolute left-48">
-        <div className="flex flex-col gap-8">
+    <Container className="flex flex-col h-screen bg-inherit grid grid-cols-2 h-screen">
+      <div className="flex items-center justify-center p-10 rounded-xl left-48">
+        <div className="flex flex-col gap-8 w-96">
           {activeView === "LOGIN" && (
             <>
-              <h3 className="text-3xl tracking-wide text-center">Acesse a sua Conta</h3>
+              <h3 className="text-3xl tracking-wide text-center font-semibold">Acesse a sua Conta</h3>
               <div className="flex flex-col gap-3">
                 <TextInput
                   name="email"
                   placeholder="Email"
-                  label="Email"
+                  // label="Email"
                   type="email"
                   onChange={handleAccessForm}
                   value={accessForm.email || ""}
@@ -90,20 +91,20 @@ const Login = () => {
                 <TextInput
                   name="password"
                   placeholder="Senha"
-                  label="Senha"
+                  // label="Senha"
                   type="password"
                   onChange={handleAccessForm}
                   value={accessForm.password || ""}
                 />
                 <div>
-                  <p className="mb-0.5">Esqueci a minha senha</p>
-                  <p className="mb-0.5 cursor-pointer" onClick={switchToCreate}>Não possui uma conta?</p>
+                  <p className="mb-0.5 bg-blue text-rose-500">Esqueci a minha senha</p>
+                  <p className="mb-0.5 cursor-pointer text-rose-500" onClick={switchToCreate}>Não possui uma conta?</p>
                 </div>
               </div>
               <button 
                 onClick={login} 
                 disabled={isLoginFormValid()}
-                className="w-full bg-black disabled:bg-black text-white rounded-md py-2 mt-5"
+                className="w-full bg-black disabled:bg-black text-white rounded-md py-2 mt-5 cursor-pointer"
               >
                 Entrar
               </button>
@@ -145,7 +146,7 @@ const Login = () => {
                   onChange={handleAccessForm}
                   value={accessForm.passwordConfirmation || ""}
                 />
-                <p className="mb-0.5 cursor-pointer" onClick={switchToLogin}>Já possuo uma conta</p>
+                <p className="mb-0.5 cursor-pointer text-rose-500" onClick={switchToLogin}>Já possuo uma conta</p>
               </div>
               <button 
                 onClick={register} 
@@ -156,6 +157,15 @@ const Login = () => {
               </button>
             </>
           )}
+        </div>
+      </div>
+      <div className="flex justify-start grid grid-columns-1 mt-10">
+        <div className="flex my-0 grid grid-columns-2">
+          <p className="flex items-center justify-center text-4xl leading-3 font-bold text-slate-800 mt-0">Mantenha seu dinheiro SEGURO no </p>
+          <p className="flex items-center justify-center text-4xl leading-3 font-bold text-pink-800 mt-0">melhor banco: O MyBank !</p>
+        </div>
+        <div className="flex items-center justify-center">
+          <img className="flex w-75 h-65" src={securityImage}></img>
         </div>
       </div>
     </Container>

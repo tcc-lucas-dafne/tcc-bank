@@ -6,10 +6,12 @@ interface LabelProps {
 
 export const Input = styled.input`
   border: 1px solid grey;
-  border-radius: 6px;
+  border-radius: 5px;
   color: #000;
   outline: none;
   font-size: 18px;
+  padding-left: 20px;
+  padding-right: 6px;
 `;
 
 export const Label = styled.label<LabelProps>`
