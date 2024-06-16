@@ -29,6 +29,7 @@ const AppProvider = ({ children }: { children: any }) => {
           }
         } catch (err) {
           console.error(err);
+          setUser(null);
         }
       } else {
         setUser(null);
