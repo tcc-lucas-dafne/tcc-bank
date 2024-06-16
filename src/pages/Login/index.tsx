@@ -169,8 +169,7 @@ const Login = () => {
           </div>
         </div>
       </div>
-      <div className="flex justify-end items-end h-screen drop-shadow-xl flex justify-start grid grid-columns-1 mt-0 md:justify-center items-center overflow-hidden hidden sm:block">
-        <img className="h-full" src={securityImage}></img>
+      <div className="flex justify-end items-end h-screen drop-shadow-xl flex justify-start grid grid-columns-1 mt-0 md:justify-center items-center overflow-hidden hidden sm:block bg-no-repeat bg-cover" style={{ backgroundImage: `url(${securityImage})`}}>
         {/* <div className="flex my-0 grid grid-columns-2">
           <p className="flex items-center justify-center text-4xl leading-3 font-bold text-slate-800 mt-0">Mantenha seu dinheiro SEGURO no </p>
           <p className="flex items-center justify-center text-4xl leading-3 font-bold text-pink-800 mt-0">melhor banco: O MyBank !</p>
