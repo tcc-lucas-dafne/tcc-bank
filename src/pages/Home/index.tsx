@@ -111,17 +111,17 @@ const Home = () => {
                 {/* <div className='h-full'> */}
                   <div className="h-full">
                   {/* <div className="grid grid-cols-2 gap-4"> */}
-                    <Card sx={{ borderRadius: '1rem', backgroundColor: 'rgb(250 250 250)'}} className='cursor-pointer flex items-center justify-center p-8 grid grid-rows-2 m-10 rounded-xl'>
+                    <Card sx={{ borderRadius: '1rem' }} className='cursor-pointer flex items-center justify-center p-8 grid grid-rows-2 m-4 h-36 bg-white'>
                       <FontAwesomeIcon icon={faRightLeft} className="md:w-6 h-6 m-auto text-pink-600" />
-                      <span className='ml-2 text-md font-bold'>
+                      <span className='ml-2 text-md font-bold whitespace-nowrap'>
                         Transferir
                       </span>
                     </Card>
                     </div>
                     <div  className="h-full">
-                    <Card sx={{ borderRadius: '1rem', backgroundColor: 'rgb(250 250 250)' }} className='cursor-pointer flex items-center justify-center p-8 grid grid-rows-2 m-10 rounded-3xl '>
+                    <Card sx={{ borderRadius: '1rem'  }} className='cursor-pointer flex items-center justify-center p-8 grid grid-rows-2 m-4 h-36 bg-white '>
                       <FontAwesomeIcon icon={faBarcode} className="md:w-6 h-6  m-auto text-pink-600" />
-                      <span className='ml-2 text-md font-bold'>
+                      <span className='ml-2 text-md font-bold whitespace-nowrap'>
                         Pagar Boleto
                       </span>
                     </Card>
@@ -130,9 +130,9 @@ const Home = () => {
                 {/* </div> */}
                 <div className="h-full">
                   {/* <p className='text-left p-4 font-semibold text-xl pb-2 pt-7'>Recebimentos</p> */}
-                    <Card sx={{ borderRadius: '1rem', backgroundColor: 'rgb(250 250 250)' }} className='cursor-pointer flex items-center justify-center p-8 grid grid-rows-2 m-10 rounded-3xl'>
+                    <Card sx={{ borderRadius: '1rem'  }} className='cursor-pointer flex items-center justify-center p-8 grid grid-rows-2 m-4 h-36 bg-white'>
                       <FontAwesomeIcon icon={faReceipt} className="md:w-6 h-6 m-auto text-pink-600" />
-                      <span className='ml-2 text-md font-bold'>
+                      <span className='ml-2 text-md font-bold whitespace-nowrap'>
                         {/* Depositar PIX, Boleto ou TED
                       Definir valor e gerar qr code, chave, boleto e dados de TED */}
                         Depósitos
@@ -143,21 +143,21 @@ const Home = () => {
               <div>
                 <p className='text-left font-bold text-2xl pb-2 pt-0 p-10'>PIX</p>
                 <div className="grid grid-cols-3 gap-3 flex justify-center items-center">
-                  <Card sx={{ borderRadius: '1rem', backgroundColor: 'rgb(250 250 250)' }} className='cursor-pointer flex items-center justify-center p-8 grid grid-rows-2 m-10 rounded-3xl'>
+                  <Card sx={{ borderRadius: '1rem'  }} className='cursor-pointer flex items-center justify-center p-8 grid grid-rows-2 m-4 h-36 bg-white'>
                     <FontAwesomeIcon icon={faKey} className="md:w-6 h-6 m-auto text-pink-600" />
-                    <span className='text-md font-bold'>
+                    <span className='text-md font-bold whitespace-nowrap'>
                       Chaves PIX
                     </span>
                   </Card>
-                  <Card sx={{ borderRadius: '1rem', backgroundColor: 'rgb(250 250 250)'}} className='cursor-pointer flex items-center justify-center p-10 grid grid-rows-2 m-10 rounded-3xl'>
+                  <Card sx={{ borderRadius: '1rem' }} className='cursor-pointer flex items-center justify-center p-10 grid grid-rows-2 m-4 h-36 bg-white'>
                     <FontAwesomeIcon icon={faCopy} className="md:w-6 h-6 m-auto text-pink-600" />
-                    <span className='text-md font-bold'>
+                    <span className='text-md font-bold whitespace-nowrap'>
                       PIX copia e cola
                     </span>
                   </Card>
-                  <Card sx={{ borderRadius: '1rem', backgroundColor: 'rgb(250 250 250)' }} className='cursor-pointer flex items-center justify-center p-10 grid grid-rows-2 m-10 rounded-3xl'>
+                  <Card sx={{ borderRadius: '1rem'  }} className='cursor-pointer flex items-center justify-center p-10 grid grid-rows-2 m-4 h-36 bg-white'>
                     <FontAwesomeIcon icon={faRightLeft} className="md:w-6 h-6 m-auto text-pink-600" />
-                    <span className='text-md font-bold'>
+                    <span className='text-md font-bold whitespace-nowrap'>
                       Transferir PIX
                     </span>
                   </Card>
