@@ -5,7 +5,7 @@ import User from "../../services/account";
 import { toast } from "react-toastify";
 import { useAppContext } from "../../context";
 import { Navigate } from "react-router-dom";
-import securityImage from '../../assets/security.png';
+import securityImage from '../../assets/bank_people.png';
 
 type AccessForm = {
   email?: string;
@@ -73,25 +73,26 @@ const Login = () => {
   };
 
   return (
-    <Container className="flex flex-col h-screen bg-inherit grid grid-cols-2 h-screen">
+    <Container className="flex flex-col h-screen bg-inherit md:grid grid-cols-2 h-screen">
       <div className="flex items-center justify-center p-10 rounded-xl left-48">
-        <div className="flex flex-col gap-8 w-96">
+        <div className="flex flex-col gap-12 w-[470px]">
           {activeView === "LOGIN" && (
             <>
-              <h3 className="text-3xl tracking-wide text-center font-semibold">Acesse a sua Conta</h3>
-              <div className="flex flex-col gap-3">
+              <h3 className="text-4xl tracking-wide text-center font-bold">Acesse a sua Conta</h3>
+              <hr></hr>
+              <div className="flex flex-col gap-8 mt-200">
                 <TextInput
                   name="email"
-                  placeholder="Email"
-                  // label="Email"
+                  placeholder="Digite o seu email"
+                  label="Email"
                   type="email"
                   onChange={handleAccessForm}
                   value={accessForm.email || ""}
                 />
                 <TextInput
                   name="password"
-                  placeholder="Senha"
-                  // label="Senha"
+                  placeholder="Digite a sua senha"
+                  label="Senha"
                   type="password"
                   onChange={handleAccessForm}
                   value={accessForm.password || ""}
@@ -113,6 +114,7 @@ const Login = () => {
           {activeView === "REGISTER" && (
             <>
               <h3 className="text-3xl tracking-wide text-center">Criar Conta</h3>
+              <hr></hr>
               <div className="flex flex-col gap-3">
                 <TextInput
                   name="name"
@@ -159,14 +161,15 @@ const Login = () => {
           )}
         </div>
       </div>
-      <div className="flex justify-start grid grid-columns-1 mt-10">
-        <div className="flex my-0 grid grid-columns-2">
+      <div className="flex justify-start grid grid-columns-1 m-10 md:justify-center items-center">
+        <img className="rounded-md drop-shadow-4xl" src={securityImage}></img>
+        {/* <div className="flex my-0 grid grid-columns-2">
           <p className="flex items-center justify-center text-4xl leading-3 font-bold text-slate-800 mt-0">Mantenha seu dinheiro SEGURO no </p>
           <p className="flex items-center justify-center text-4xl leading-3 font-bold text-pink-800 mt-0">melhor banco: O MyBank !</p>
-        </div>
-        <div className="flex items-center justify-center">
+        </div> */}
+        {/* <div className="flex items-center justify-center">
           <img className="flex w-75 h-65" src={securityImage}></img>
-        </div>
+        </div> */}
       </div>
     </Container>
   )
