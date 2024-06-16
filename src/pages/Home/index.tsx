@@ -8,6 +8,7 @@ import creditCard from '../../assets/black_credit_card.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRightLeft, faKey, faCopy, faBarcode, faReceipt } from '@fortawesome/free-solid-svg-icons';
 import Graphic from "../../components/Graphic";
+import Timeline from "../../components/Timeline";
 import bankSecurity from '../../assets/happy_people.png';
 import aboutUs from '../../assets/colorful_people.png';
 import happy from '../../assets/happy.png';
@@ -77,11 +78,11 @@ const Home = () => {
           <CardContent className="text-left">
             <h3 className="text-xs md:text-2xl font-bold whitespace-nowrap mb-3 mt-5 ml-5">Cartão de Crédito</h3>
           </CardContent>
-          <div className="sm:items-center content-center md:grid grid-cols-2">
+          <div className="sm:items-center content-center md:grid grid-cols-2 md:items-start content-center">
             <CardMedia
               component="img"
               image={creditCard}
-              sx={{ height: '100%', maxWidth: '100%', margin: '0' }}
+              sx={{ height: '80%', maxWidth: '100%', margin: '0', display:'flex', alignItems: 'start' }}
               alt="Cartão de crédito"
             />
             <Card className="m-5 bg-neutral-50" sx={{ borderRadius: '1rem', backgroundColor: 'rgb(250 250 250)' }} variant="outlined" >
@@ -101,99 +102,109 @@ const Home = () => {
           </div>
         </Card>
       </Box>
-      <Box sx={{ maxWidth: { xs: "500px", md: "100%", lg: "100%" }, marginRight: { md: "2rem", lg: "2rem" }, marginLeft: { md: "1rem", lg: "1rem" }, marginTop: { md: "1rem", lg: "1rem" } }}>
-        <Card sx={{ mb: '10px', height: 'auto', borderRadius: '1rem' }}>
-          <div>
-            <p className='text-left font-semibold text-2xl p-5'>Oferecemos para você</p>
-            <div className="flex grid grid-cols-3">
-              <div className="rounded-full text-center pl-5 p-10">
-                <img className="rounded-full w-40 h-40 m-auto pb-3" src={bankSecurity}></img>
-                <span className='text-wrap ml-2 text-2xl font-semibold'>
-                  {/* Você sabia que o nosso banco se preocupa muito com a sua segurança?
-                  Nós mantemos os seus dados secretos sem nenhum acesso para que você esteja sempre seguro. */}
-                  Segurança
-                </span>
-              </div>
-              <div className="rounded-full text-center pl-5 p-10">
-                <img className="rounded-full w-40 h-40 m-auto pb-3" src={aboutUs}></img>
-                <span className='ml-2 text-2xl font-semibold'>
-                  {/* Todas as suas transações são garantidas conosco. SEM ERROS E FALHAS! */}
-                  Confiança
-                </span>
-              </div>
-              <div className="rounded-full text-center pl-5 p-10">
-                <img className="rounded-full w-40 h-40 m-auto pb-3" src={happy}></img>
-                <span className='ml-2 text-2xl font-semibold'>
-                  {/* No nosso banco você pode ver um histórico de todas as operações realizadas. */}
-                  Proteção
-                </span>
-              </div>
-            </div>
-            <hr></hr>
-            <div className="grid grid-cols-2">
-              <div className='h-full'>
-                <p className='text-left p-4 font-semibold text-xl pb-2 pt-7'>Transferências/Pagamentos</p>
-                <div className="grid grid-cols-2 gap-4">
-                  <Card sx={{ borderRadius: '100rem', backgroundColor: 'rgb(250 250 250)' }} className='cursor-pointer p-10 justify-center items-center grid grid-rows-2 m-5 rounded-3xl  '>
-                    <FontAwesomeIcon icon={faRightLeft} className="md:w-6 h-6 m-auto text-pink-600" />
-                    <span className='ml-2 text-md font-bold'>
-                      Transferir
-                    </span>
-                  </Card>
-                  <Card sx={{ borderRadius: '100rem', backgroundColor: 'rgb(250 250 250)' }} className='cursor-pointer p-10 justify-center items-center grid grid-rows-2 m-5 mr-2 rounded-3xl'>
-                    <FontAwesomeIcon icon={faBarcode} className="md:w-6 h-6  m-auto text-pink-600" />
-                    <span className='ml-2 text-md font-bold'>
-                      Pagar boleto
-                    </span>
-                  </Card>
+      <div className="md:flex flex-columns bg-neutral-50 h-full">
+        <Box sx={{ maxWidth: { xs: "500px", md: "100%", lg: "100%" }, marginRight: { md: "0.5rem", lg: "0.5rem" }, marginLeft: { md: "1.5rem", lg: "1.5rem" }, marginTop: { md: "1rem", lg: "1rem" } }}>
+          <Card sx={{ mb: '10px', height: 'auto', borderRadius: '1rem' }}>
+            <div>
+            <p className='text-left font-bold text-2xl pb-2 pt-10 p-10'>Transferências/Pagamentos</p>
+              <div className="grid grid-cols-3 flex justify-center items-center">
+                {/* <div className='h-full'> */}
+                  <div className="h-full">
+                  {/* <div className="grid grid-cols-2 gap-4"> */}
+                    <Card sx={{ borderRadius: '1rem', backgroundColor: 'rgb(250 250 250)'}} className='cursor-pointer flex items-center justify-center p-8 grid grid-rows-2 m-10 rounded-xl'>
+                      <FontAwesomeIcon icon={faRightLeft} className="md:w-6 h-6 m-auto text-pink-600" />
+                      <span className='ml-2 text-md font-bold'>
+                        Transferir
+                      </span>
+                    </Card>
+                    </div>
+                    <div  className="h-full">
+                    <Card sx={{ borderRadius: '1rem', backgroundColor: 'rgb(250 250 250)' }} className='cursor-pointer flex items-center justify-center p-8 grid grid-rows-2 m-10 rounded-3xl '>
+                      <FontAwesomeIcon icon={faBarcode} className="md:w-6 h-6  m-auto text-pink-600" />
+                      <span className='ml-2 text-md font-bold'>
+                        Pagar Boleto
+                      </span>
+                    </Card>
+                    </div>
+                  {/* </div> */}
+                {/* </div> */}
+                <div className="h-full">
+                  {/* <p className='text-left p-4 font-semibold text-xl pb-2 pt-7'>Recebimentos</p> */}
+                    <Card sx={{ borderRadius: '1rem', backgroundColor: 'rgb(250 250 250)' }} className='cursor-pointer flex items-center justify-center p-8 grid grid-rows-2 m-10 rounded-3xl'>
+                      <FontAwesomeIcon icon={faReceipt} className="md:w-6 h-6 m-auto text-pink-600" />
+                      <span className='ml-2 text-md font-bold'>
+                        {/* Depositar PIX, Boleto ou TED
+                      Definir valor e gerar qr code, chave, boleto e dados de TED */}
+                        Depósitos
+                      </span>
+                    </Card>
                 </div>
               </div>
               <div>
-                <p className='text-left p-4 font-semibold text-xl pb-2 pt-7'>Recebimentos</p>
-                <div className="grid grid-cols-1 gap-4">
-                  <Card sx={{ borderRadius: '100rem', backgroundColor: 'rgb(250 250 250)' }} className='cursor-pointer p-10 justify-center items-center grid grid-rows-2 m-5 rounded-3xl'>
-                    <FontAwesomeIcon icon={faReceipt} className="md:w-6 h-6 m-auto text-pink-600" />
-                    <span className='ml-2 text-md font-bold'>
-                      {/* Depositar PIX, Boleto ou TED
-                    Definir valor e gerar qr code, chave, boleto e dados de TED */}
-                      Depósitos
+                <p className='text-left font-bold text-2xl pb-2 pt-0 p-10'>PIX</p>
+                <div className="grid grid-cols-3 gap-3 flex justify-center items-center">
+                  <Card sx={{ borderRadius: '1rem', backgroundColor: 'rgb(250 250 250)' }} className='cursor-pointer flex items-center justify-center p-8 grid grid-rows-2 m-10 rounded-3xl'>
+                    <FontAwesomeIcon icon={faKey} className="md:w-6 h-6 m-auto text-pink-600" />
+                    <span className='text-md font-bold'>
+                      Chaves PIX
+                    </span>
+                  </Card>
+                  <Card sx={{ borderRadius: '1rem', backgroundColor: 'rgb(250 250 250)'}} className='cursor-pointer flex items-center justify-center p-10 grid grid-rows-2 m-10 rounded-3xl'>
+                    <FontAwesomeIcon icon={faCopy} className="md:w-6 h-6 m-auto text-pink-600" />
+                    <span className='text-md font-bold'>
+                      PIX copia e cola
+                    </span>
+                  </Card>
+                  <Card sx={{ borderRadius: '1rem', backgroundColor: 'rgb(250 250 250)' }} className='cursor-pointer flex items-center justify-center p-10 grid grid-rows-2 m-10 rounded-3xl'>
+                    <FontAwesomeIcon icon={faRightLeft} className="md:w-6 h-6 m-auto text-pink-600" />
+                    <span className='text-md font-bold'>
+                      Transferir PIX
                     </span>
                   </Card>
                 </div>
               </div>
-            </div>
-            <div>
-              <p className='text-left p-4 font-semibold text-xl pb-2 pt-7'>PIX</p>
-              <div className="grid grid-cols-3 gap-3">
-                <Card sx={{ borderRadius: '100rem', backgroundColor: 'rgb(250 250 250)' }} className='cursor-pointer flex items-center justify-center p-10 grid grid-rows-2 m-5 rounded-3xl'>
-                  <FontAwesomeIcon icon={faKey} className="md:w-6 h-6 m-auto text-pink-600" />
-                  <span className='text-xs font-bold'>
-                    Ver e configurar CHAVES PIX
+              <p className='text-left font-bold text-2xl pb-2 pt-0 p-10'>Oferecemos para você</p>
+              <div className="flex grid grid-cols-3">
+                <div className="rounded-full text-center pl-5 p-10">
+                  <img className="rounded-full w-36 h-36 m-auto pb-3" src={bankSecurity}></img>
+                  <span className='text-wrap ml-2 text-2xl font-semibold'>
+                    {/* Você sabia que o nosso banco se preocupa muito com a sua segurança?
+                    Nós mantemos os seus dados secretos sem nenhum acesso para que você esteja sempre seguro. */}
+                    Segurança
                   </span>
-                </Card>
-                <Card sx={{ borderRadius: '100rem', backgroundColor: 'rgb(250 250 250)' }} className='cursor-pointer flex items-center justify-center p-10 grid grid-rows-2 m-5 rounded-3xl'>
-                  <FontAwesomeIcon icon={faCopy} className="md:w-6 h-6 m-auto text-pink-600" />
-                  <span className='text-xs font-bold'>
-                    PIX copia e cola
+                </div>
+                <div className="rounded-full text-center pl-5 p-10">
+                  <img className="rounded-full w-36 h-36 m-auto pb-3" src={aboutUs}></img>
+                  <span className='ml-2 text-2xl font-semibold'>
+                    {/* Todas as suas transações são garantidas conosco. SEM ERROS E FALHAS! */}
+                    Confiança
                   </span>
-                </Card>
-                <Card sx={{ borderRadius: '100rem', backgroundColor: 'rgb(250 250 250)' }} className='cursor-pointer flex items-center justify-center p-10 grid grid-rows-2 m-5 rounded-3xl'>
-                  <FontAwesomeIcon icon={faRightLeft} className="md:w-6 h-6 m-auto text-pink-600" />
-                  <span className='text-xs font-bold'>
-                    Transferir PIX
+                </div>
+                <div className="rounded-full text-center pl-5 p-10">
+                  <img className="rounded-full w-36 h-36 m-auto pb-3" src={happy}></img>
+                  <span className='ml-2 text-2xl font-semibold'>
+                    {/* No nosso banco você pode ver um histórico de todas as operações realizadas. */}
+                    Proteção
                   </span>
-                </Card>
+                </div>
               </div>
+              <hr></hr>
             </div>
-          </div>
-          {/* <div className='cursor-pointer p-10'>
-              <FontAwesomeIcon icon={faKey}/>
-              <span className='ml-2 text-md font-bold'>
-                Ler QR code
-              </span>
-            </div> */}
-        </Card>
-      </Box>
+            {/* <div className='cursor-pointer p-10'>
+                <FontAwesomeIcon icon={faKey}/>
+                <span className='ml-2 text-md font-bold'>
+                  Ler QR code
+                </span>
+              </div> */}
+          </Card>
+        </Box>
+        <Box sx={{ maxWidth: { xs: "500px", md: "100%", lg: "100%" }, marginRight: { md: "2rem", lg: "2rem" }, marginLeft: { md: "0.5rem", lg: "0.5rem" }, marginTop: { md: "1rem", lg: "1rem" } }}>
+          <Card sx={{ mb: '10px', height: '100vh', borderRadius: '1rem', padding:'1rem'}}>
+            <p className='text-left font-bold text-2xl pb-10 pt-6'>Histórico de recebimentos</p>
+            <Timeline/>
+          </Card>
+        </Box>
+      </div>
       <Modal open={isRequestModalOpen} onClose={closeRequestModal}>
         <ModalDialog>
           <ModalClose />

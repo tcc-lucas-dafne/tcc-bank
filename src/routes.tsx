@@ -1,4 +1,4 @@
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 
 import Home from './pages/Home';
 import Login from './pages/Login';
@@ -9,16 +9,18 @@ import UserUpdate from './pages/UserUpdate';
 
 const AppRoutes = () => {
   const { user } = useAppContext();
+  const location = useLocation(); 
 
   if (user === undefined) {
     return <Loading />;
   };
 
   const isAuthenticated: boolean = !!user;
+  const isLoginRoute = location.pathname === '/login';
 
   return (
     <>
-      <Navigation />
+      {!isLoginRoute && <Navigation />}
       <Routes>
         <Route path="/" element={isAuthenticated ? <Home /> : <Navigate to="login" replace />} />
         <Route path="/login" element={isAuthenticated ? <Navigate to="/" replace /> : <Login />} />
