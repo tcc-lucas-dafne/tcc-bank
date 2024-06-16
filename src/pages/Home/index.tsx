@@ -69,40 +69,44 @@ const Home = () => {
       <Box sx={{maxWidth: { xs: "500px", md: "100%", lg: "100%" }, marginRight: { md:"2rem", lg:"2rem"}, marginLeft: { md:"1rem", lg:"1rem"}, marginTop: { md:"1rem", lg:"1rem"}}}>
       <Card sx={{ mb:'10px', height:'auto', borderRadius:'1rem'}}>
           <div>  
-            <p className='text-left font-semibold text-2xl p-5'>Para você</p>
+            <p className='text-left font-semibold text-2xl p-5'>Oferecemos para você</p>
             <div className="flex grid grid-cols-3">
-              <div className="rounded-full text-justify pl-5 p-10">
+              <div className="rounded-full text-center pl-5 p-10">
                 <img className="rounded-full w-40 h-40 m-auto pb-3" src={bankSecurity}></img>
-                <span className='text-wrap ml-2 text-xs font-semibold'>
-                  Você sabia que o nosso banco se preocupa muito com a sua segurança?
-                  Nós mantemos os seus dados secretos sem nenhum acesso para que você esteja sempre seguro.
+                <span className='text-wrap ml-2 text-2xl font-semibold'>
+                  {/* Você sabia que o nosso banco se preocupa muito com a sua segurança?
+                  Nós mantemos os seus dados secretos sem nenhum acesso para que você esteja sempre seguro. */}
+                  Segurança
                 </span>
               </div>
-              <div className="rounded-full text-justify pl-5 p-10">
+              <div className="rounded-full text-center pl-5 p-10">
                 <img className="rounded-full w-40 h-40 m-auto pb-3" src={aboutUs}></img>
-                <span className='ml-2 text-xs font-semibold'>
-                  Todas as suas transações são garantidas conosco. SEM ERROS E FALHAS!
+                <span className='ml-2 text-2xl font-semibold'>
+                  {/* Todas as suas transações são garantidas conosco. SEM ERROS E FALHAS! */}
+                  Confiança
                 </span>
               </div>
-              <div className="rounded-full text-justify pl-5 p-10">
+              <div className="rounded-full text-center pl-5 p-10">
                 <img className="rounded-full w-40 h-40 m-auto pb-3" src={happy}></img>
-                <span className='ml-2 text-xs font-semibold'>
-                  No nosso banco você pode ver um histórico de todas as operações realizadas.
+                <span className='ml-2 text-2xl font-semibold'>
+                  {/* No nosso banco você pode ver um histórico de todas as operações realizadas. */}
+                  Proteção
                 </span>
               </div>
             </div>
             <hr></hr>
+            <div className="grid grid-cols-2">
             <div className='h-full'>
               <p className='text-left p-4 font-semibold text-xl pb-2 pt-7'>Transferências/Pagamentos</p>
               <div className="grid grid-cols-2 gap-4">
               <Card sx={{ borderRadius:'100rem', backgroundColor: 'rgb(250 250 250)' }}  className='cursor-pointer p-10 justify-center items-center grid grid-rows-2 m-5 rounded-3xl  '>
-                <FontAwesomeIcon icon={faRightLeft} className="m-auto text-pink-600"/>
+                <FontAwesomeIcon icon={faRightLeft} className="md:w-6 h-6 m-auto text-pink-600"/>
                 <span className='ml-2 text-md font-bold'>
                   Transferir
                 </span>
               </Card>
               <Card sx={{ borderRadius:'100rem',  backgroundColor: 'rgb(250 250 250)'}}  className='cursor-pointer p-10 justify-center items-center grid grid-rows-2 m-5 mr-2 rounded-3xl'>
-                <FontAwesomeIcon icon={faBarcode} className="m-auto text-pink-600"/>
+                <FontAwesomeIcon icon={faBarcode} className="md:w-6 h-6  m-auto text-pink-600"/>
                 <span className='ml-2 text-md font-bold'>
                   Pagar boleto
                 </span>
@@ -113,7 +117,7 @@ const Home = () => {
               <p className='text-left p-4 font-semibold text-xl pb-2 pt-7'>Recebimentos</p>
               <div className="grid grid-cols-1 gap-4">
                 <Card sx={{ borderRadius:'100rem', backgroundColor: 'rgb(250 250 250)' }}  className='cursor-pointer p-10 justify-center items-center grid grid-rows-2 m-5 rounded-3xl'>
-                  <FontAwesomeIcon icon={faReceipt} className="m-auto text-pink-600"/>
+                  <FontAwesomeIcon icon={faReceipt} className="md:w-6 h-6 m-auto text-pink-600"/>
                   <span className='ml-2 text-md font-bold'>
                     {/* Depositar PIX, Boleto ou TED
                     Definir valor e gerar qr code, chave, boleto e dados de TED */}
@@ -122,23 +126,24 @@ const Home = () => {
                 </Card>
               </div>
             </div>
+            </div>
             <div>
               <p className='text-left p-4 font-semibold text-xl pb-2 pt-7'>PIX</p>
               <div className="grid grid-cols-3 gap-3">
               <Card sx={{ borderRadius:'100rem', backgroundColor: 'rgb(250 250 250)' }} className='cursor-pointer flex items-center justify-center p-10 grid grid-rows-2 m-5 rounded-3xl'>
-                <FontAwesomeIcon icon={faKey} className="m-auto text-pink-600"/>
+                <FontAwesomeIcon icon={faKey} className="md:w-6 h-6 m-auto text-pink-600"/>
                 <span className='text-xs font-bold'>
                   Ver e configurar CHAVES PIX
                 </span>
               </Card>
               <Card sx={{ borderRadius:'100rem', backgroundColor: 'rgb(250 250 250)' }}  className='cursor-pointer flex items-center justify-center p-10 grid grid-rows-2 m-5 rounded-3xl'>
-                <FontAwesomeIcon icon={faCopy} className="m-auto text-pink-600"/>
+                <FontAwesomeIcon icon={faCopy} className="md:w-6 h-6 m-auto text-pink-600"/>
                 <span className='text-xs font-bold'>
                   PIX copia e cola
                 </span>
               </Card>
               <Card sx={{ borderRadius:'100rem', backgroundColor: 'rgb(250 250 250)' }} className='cursor-pointer flex items-center justify-center p-10 grid grid-rows-2 m-5 rounded-3xl'>
-                <FontAwesomeIcon icon={faRightLeft} className="m-auto text-pink-600"/>
+                <FontAwesomeIcon icon={faRightLeft} className="md:w-6 h-6 m-auto text-pink-600"/>
                 <span className='text-xs font-bold'>
                   Transferir PIX
                 </span>
