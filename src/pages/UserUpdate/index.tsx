@@ -99,10 +99,12 @@ const UserUpdate = () => {
   };
 
   return (
-    <div>
-      <button className="border-solid border-slate-400 rounded-sm bg-violet-400 px-4 py-2 mt-3" onClick={redirectToHome}>Voltar</button>
-      <div className="gap-12 md:flex mx-100 justify-center sm:grid grid-cols-1 " style={{ backgroundImage: 'src()' }}>
-        <div className="max-w-lg mt-10">
+    <div className="bg-neutral-50 overflow-y-auto">
+      <div className="md:flex justify-start">
+        <button className="ml-12 mt-10 w-32 bg-black disabled:bg-black text-white rounded-md py-2 m-2 cursor-pointer" onClick={redirectToHome}>Voltar</button>
+      </div>
+      <div className="gap-12 md:flex mx-100 justify-center sm:grid grid-cols-2 " style={{ backgroundImage: 'src()' }}>
+        <div className="md:w-1/3 mt-10 sm:max-w-lg">
           <form onSubmit={handleUserDataSubmit} className="bg-white shadow-md rounded-lg p-6 m-1.5">
             <h4 className="text-2xl font-bold mb-4">Atualizar Dados de Usuario</h4>
             <div className="flex justify-center mb-4">
