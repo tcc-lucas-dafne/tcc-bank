@@ -1,7 +1,7 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.15.0",
-	"@generated": "Mon, 17 Jun 2024 21:31:48",
+	"@generated": "Mon, 17 Jun 2024 21:34:49",
 	"site":[ 
 		{
 			"@name": "https://hml-tcc-password-manager.vercel.app",
@@ -286,7 +286,7 @@
 					"reference": "<p>https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/gg622941(v=vs.85)</p><p>https://owasp.org/www-community/Security_Headers</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "1"
+					"sourceid": "8"
 				},
 				{
 					"pluginid": "10027",
@@ -313,7 +313,7 @@
 					"reference": "",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "17"
+					"sourceid": "20"
 				},
 				{
 					"pluginid": "10109",
@@ -348,7 +348,7 @@
 					"reference": "",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "1"
+					"sourceid": "8"
 				},
 				{
 					"pluginid": "10015",
@@ -416,7 +416,7 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "Age: 282678",
+							"evidence": "Age: 282816",
 							"otherinfo": "The presence of the 'Age' header indicates that a HTTP/1.1 compliant caching server is in use."
 						},
 						{
@@ -424,7 +424,7 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "Age: 282677",
+							"evidence": "Age: 282816",
 							"otherinfo": "The presence of the 'Age' header indicates that a HTTP/1.1 compliant caching server is in use."
 						},
 						{
@@ -432,7 +432,7 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "Age: 0",
+							"evidence": "Age: 282816",
 							"otherinfo": "The presence of the 'Age' header indicates that a HTTP/1.1 compliant caching server is in use."
 						},
 						{
@@ -440,7 +440,7 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "Age: 0",
+							"evidence": "Age: 282816",
 							"otherinfo": "The presence of the 'Age' header indicates that a HTTP/1.1 compliant caching server is in use."
 						},
 						{
@@ -448,7 +448,7 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "Age: 0",
+							"evidence": "Age: 282816",
 							"otherinfo": "The presence of the 'Age' header indicates that a HTTP/1.1 compliant caching server is in use."
 						},
 						{
@@ -456,7 +456,7 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "Age: 0",
+							"evidence": "Age: 282816",
 							"otherinfo": "The presence of the 'Age' header indicates that a HTTP/1.1 compliant caching server is in use."
 						},
 						{
@@ -464,7 +464,7 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "Age: 282678",
+							"evidence": "Age: 282816",
 							"otherinfo": "The presence of the 'Age' header indicates that a HTTP/1.1 compliant caching server is in use."
 						},
 						{
@@ -472,7 +472,7 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "Age: 282678",
+							"evidence": "Age: 282816",
 							"otherinfo": "The presence of the 'Age' header indicates that a HTTP/1.1 compliant caching server is in use."
 						}
 					],
@@ -503,14 +503,6 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://hml-tcc-password-manager.vercel.app/favicon.ico",
-							"method": "GET",
-							"param": "Sec-Fetch-Dest",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://hml-tcc-password-manager.vercel.app/robots.txt",
 							"method": "GET",
 							"param": "Sec-Fetch-Dest",
@@ -519,7 +511,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://hml-tcc-password-manager.vercel.app/static/css/main.f855e6bc.css",
+							"uri": "https://hml-tcc-password-manager.vercel.app/sitemap.xml",
 							"method": "GET",
 							"param": "Sec-Fetch-Dest",
 							"attack": "",
@@ -527,13 +519,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "4",
+					"count": "3",
 					"solution": "<p>Ensure that Sec-Fetch-Dest header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Dest</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "1"
+					"sourceid": "8"
 				},
 				{
 					"pluginid": "90005",
@@ -554,14 +546,6 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://hml-tcc-password-manager.vercel.app/favicon.ico",
-							"method": "GET",
-							"param": "Sec-Fetch-Mode",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://hml-tcc-password-manager.vercel.app/robots.txt",
 							"method": "GET",
 							"param": "Sec-Fetch-Mode",
@@ -570,7 +554,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://hml-tcc-password-manager.vercel.app/static/css/main.f855e6bc.css",
+							"uri": "https://hml-tcc-password-manager.vercel.app/sitemap.xml",
 							"method": "GET",
 							"param": "Sec-Fetch-Mode",
 							"attack": "",
@@ -578,7 +562,7 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "4",
+					"count": "3",
 					"solution": "<p>Ensure that Sec-Fetch-Mode header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Mode</p>",
@@ -605,14 +589,6 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://hml-tcc-password-manager.vercel.app/favicon.ico",
-							"method": "GET",
-							"param": "Sec-Fetch-Site",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://hml-tcc-password-manager.vercel.app/robots.txt",
 							"method": "GET",
 							"param": "Sec-Fetch-Site",
@@ -621,7 +597,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://hml-tcc-password-manager.vercel.app/static/css/main.f855e6bc.css",
+							"uri": "https://hml-tcc-password-manager.vercel.app/sitemap.xml",
 							"method": "GET",
 							"param": "Sec-Fetch-Site",
 							"attack": "",
@@ -629,7 +605,7 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "4",
+					"count": "3",
 					"solution": "<p>Ensure that Sec-Fetch-Site header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site</p>",
@@ -656,14 +632,6 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://hml-tcc-password-manager.vercel.app/favicon.ico",
-							"method": "GET",
-							"param": "Sec-Fetch-User",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://hml-tcc-password-manager.vercel.app/robots.txt",
 							"method": "GET",
 							"param": "Sec-Fetch-User",
@@ -672,7 +640,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://hml-tcc-password-manager.vercel.app/static/css/main.f855e6bc.css",
+							"uri": "https://hml-tcc-password-manager.vercel.app/sitemap.xml",
 							"method": "GET",
 							"param": "Sec-Fetch-User",
 							"attack": "",
@@ -680,13 +648,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "4",
+					"count": "3",
 					"solution": "<p>Ensure that Sec-Fetch-User header is included in user initiated requests.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-User</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "1"
+					"sourceid": "8"
 				},
 				{
 					"pluginid": "10049",
@@ -721,7 +689,7 @@
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "13"
+					"sourceid": "17"
 				},
 				{
 					"pluginid": "10049",
