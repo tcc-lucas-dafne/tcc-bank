@@ -21,7 +21,7 @@ ZAP is supported by the [Crash Override Open Source Fellowship](https://crashove
 | --- | --- | --- |
 | Content Security Policy (CSP) Header Not Set | Medium | 2 |
 | Cross-Domain Misconfiguration | Medium | 8 |
-| Missing Anti-clickjacking Header | Medium | 2 |
+| Missing Anti-clickjacking Header | Medium | 1 |
 | Permissions Policy Header Not Set | Low | 3 |
 | X-Content-Type-Options Header Missing | Low | 8 |
 | Information Disclosure - Suspicious Comments | Informational | 1 |
@@ -185,14 +185,8 @@ The response does not include either Content-Security-Policy with 'frame-ancesto
   * Attack: ``
   * Evidence: ``
   * Other Info: ``
-* URL: https://hml-tcc-password-manager.vercel.app/sitemap.xml
-  * Method: `GET`
-  * Parameter: `x-frame-options`
-  * Attack: ``
-  * Evidence: ``
-  * Other Info: ``
 
-Instances: 2
+Instances: 1
 
 ### Solution
 
@@ -492,49 +486,49 @@ The content was retrieved from a shared cache. If the response data is sensitive
   * Method: `GET`
   * Parameter: ``
   * Attack: ``
-  * Evidence: `Age: 288792`
+  * Evidence: `Age: 290691`
   * Other Info: `The presence of the 'Age' header indicates that a HTTP/1.1 compliant caching server is in use.`
 * URL: https://hml-tcc-password-manager.vercel.app/favicon.ico
   * Method: `GET`
   * Parameter: ``
   * Attack: ``
-  * Evidence: `Age: 288792`
+  * Evidence: `Age: 290690`
   * Other Info: `The presence of the 'Age' header indicates that a HTTP/1.1 compliant caching server is in use.`
 * URL: https://hml-tcc-password-manager.vercel.app/logo192.png
   * Method: `GET`
   * Parameter: ``
   * Attack: ``
-  * Evidence: `Age: 288792`
+  * Evidence: `Age: 290690`
   * Other Info: `The presence of the 'Age' header indicates that a HTTP/1.1 compliant caching server is in use.`
 * URL: https://hml-tcc-password-manager.vercel.app/manifest.json
   * Method: `GET`
   * Parameter: ``
   * Attack: ``
-  * Evidence: `Age: 288792`
+  * Evidence: `Age: 290690`
   * Other Info: `The presence of the 'Age' header indicates that a HTTP/1.1 compliant caching server is in use.`
 * URL: https://hml-tcc-password-manager.vercel.app/robots.txt
   * Method: `GET`
   * Parameter: ``
   * Attack: ``
-  * Evidence: `Age: 288757`
+  * Evidence: `Age: 290691`
   * Other Info: `The presence of the 'Age' header indicates that a HTTP/1.1 compliant caching server is in use.`
 * URL: https://hml-tcc-password-manager.vercel.app/sitemap.xml
   * Method: `GET`
   * Parameter: ``
   * Attack: ``
-  * Evidence: `Age: 288792`
+  * Evidence: `Age: 288879`
   * Other Info: `The presence of the 'Age' header indicates that a HTTP/1.1 compliant caching server is in use.`
 * URL: https://hml-tcc-password-manager.vercel.app/static/css/main.f855e6bc.css
   * Method: `GET`
   * Parameter: ``
   * Attack: ``
-  * Evidence: `Age: 288792`
+  * Evidence: `Age: 290690`
   * Other Info: `The presence of the 'Age' header indicates that a HTTP/1.1 compliant caching server is in use.`
 * URL: https://hml-tcc-password-manager.vercel.app/static/js/main.9d8f87e7.js
   * Method: `GET`
   * Parameter: ``
   * Attack: ``
-  * Evidence: `Age: 288792`
+  * Evidence: `Age: 290690`
   * Other Info: `The presence of the 'Age' header indicates that a HTTP/1.1 compliant caching server is in use.`
 
 Instances: 8
