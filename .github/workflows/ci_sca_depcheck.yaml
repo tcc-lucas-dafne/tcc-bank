@@ -49,11 +49,10 @@ jobs:
         id: Depcheck
         with:
           project: 'tcc-password-manager'
-          path: './'
+          path: './pnpm-lock.yaml'
           format: 'HTML'
           out: '.'
           args: >
-            # --failOnCVSS 7
             --enableRetired
 
       - name: Upload SARIF results file
