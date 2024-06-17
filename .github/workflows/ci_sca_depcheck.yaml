@@ -61,7 +61,7 @@ jobs:
           out: '.'
           args: >
             --enableRetired
-            --pnpm '/home/runner/setup-pnpm/node_modules/.bin/pnpm'
+            --pnpm '/usr/local/bin/pnpm'
 
       # # OWASP DEPENDENCY CHECK
       # - name: Depcheck
