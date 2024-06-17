@@ -42,6 +42,11 @@ jobs:
         with:
           sarif_file: snyk.sarif
           category: my-analysis-tool
+
+      - name: where pnpm
+        run: |
+          which pnpm-lock.yaml
+          which pnpm
       
       # OWASP DEPENDENCY CHECK
       - name: Depcheck
