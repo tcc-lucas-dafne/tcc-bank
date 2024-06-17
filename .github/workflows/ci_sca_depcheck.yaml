@@ -28,7 +28,6 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       # SCA
-      
       # SNYK
       - name: Run Snyk to check for vulnerabilities
         uses: snyk/actions/node@master
