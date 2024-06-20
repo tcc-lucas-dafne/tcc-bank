@@ -9,8 +9,8 @@ const Graphic = () => {
     <div className="max-w-sm w-full bg-white rounded-lg shadow dark:bg-gray-800 p-4 md:p-6">
     <div className="flex justify-between border-gray-200 border-b dark:border-gray-700 pb-3">
         <dl>
-        <dt className="text-base font-normal text-gray-500 dark:text-gray-400 pb-1">Lucro</dt>
-        <dd className="leading-none text-3xl font-bold text-gray-900 dark:text-white">R$5,405</dd>
+        <dt className="text-xs md:text-base font-normal text-gray-500 dark:text-gray-400 pb-1">Lucro</dt>
+        <dd className="text-md md:text-3xl leading-none font-bold text-gray-900 dark:text-white">R$5,405</dd>
         </dl>
         <div>
         <span className="bg-green-100 text-green-800 text-xs font-medium inline-flex items-center px-2.5 py-1 rounded-md dark:bg-green-900 dark:text-green-300">

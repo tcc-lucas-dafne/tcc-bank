@@ -51,8 +51,8 @@ const Home = () => {
 
   return (
     <div className="md:grid grid-cols-2 bg-neutral-50 h-full">
-      <Box sx={{ maxWidth: { xs: "500px", md: "100%", lg: "100%" }, marginLeft: { md: "2rem", lg: "2rem" }, marginTop: { md: "1rem", lg: "1rem" } }}>
-        <h1 className="text-left text-xs font-semibold p-3 md:text-4xl mb-4">Bem vindo de volta, {user?.name}!</h1>
+      <Box sx={{ maxWidth: { xs: "500px", md: "100%", lg: "100%" }, marginLeft: { md: "2rem", lg: "2rem" }, marginTop: { md: "1rem", lg: "1rem" }, height: '100%' }}>
+        <h1 className="text-left text-md font-semibold p-3 md:text-4xl mb-4">Bem vindo de volta, {user?.name}!</h1>
         {/* <h1 className="text-left text-xs md:text-2xl font-bold mb-2"></h1> */}
         <div className="md:grid grid-cols-3 grid-flow-col gap-4">
           <Card sx={{ mb: '10px', borderRadius: '1rem' }}>
@@ -66,26 +66,26 @@ const Home = () => {
           </Card>
           <Card sx={{ mb: '10px', borderRadius: '1rem' }} className="rounded-3xl grid gird-col-span-2">
             <CardContent className="text-left">
-              <h3 className="text-xs md:text-2xl font-bold whitespace-nowrap mb-10 p-3">Saldo da sua conta</h3>
-              <h3 className="text-xs md:text-4xl font-bold whitespace-nowrap pl-3 pt-2">{formatCurrency(user?.balance)}</h3>
+              <h3 className="text-md md:text-1xl lg:text-2xl font-bold whitespace-wrap mb-10 p-3">Saldo da sua conta</h3>
+              <h3 className="text-md md:text-4xl font-bold whitespace-nowrap pl-3 pt-2">{formatCurrency(user?.balance)}</h3>
             </CardContent>
           </Card>
           <Card sx={{ mb: '10px', borderRadius: '1rem' }}>
             <Graphic></Graphic>
           </Card>
         </div>
-        <Card sx={{ mb: '10px', borderRadius: '1rem' }} className="rounded-3xl">
+        <Card sx={{ marginBottom: '0', borderRadius: '1rem', height: 'max-content' }} className="rounded-3xl">
           <CardContent className="text-left">
-            <h3 className="text-xs md:text-2xl font-bold whitespace-nowrap mb-3 mt-5 ml-5">Cartão de Crédito</h3>
+            <h3 className="text-md md:text-2xl font-bold whitespace-nowrap mb-3 mt-5 ml-5">Cartão de Crédito</h3>
           </CardContent>
           <div className="sm:items-center content-center md:grid grid-cols-2 md:items-start content-center">
             <CardMedia
               component="img"
               image={creditCard}
-              sx={{ height: '80%', maxWidth: '100%', margin: '0', display:'flex', alignItems: 'start' }}
+              sx={{ maxHeight: '80%', maxWidth: '100%', margin: '0', display:'flex', alignItems: 'start' }}
               alt="Cartão de crédito"
             />
-            <Card className="m-5 bg-neutral-50" sx={{ borderRadius: '1rem', backgroundColor: 'rgb(250 250 250)' }} variant="outlined" >
+            <Card className="m-5 bg-neutral-50 mb-0" sx={{ borderRadius: '1rem', backgroundColor: 'rgb(250 250 250)' }} variant="outlined" >
               <CardContent className="text-left" >
                 <h3 className="text-xs lg:text-xl font-bold whitespace-nowrap">Total gasto</h3>
                 <h3 className="text-xs lg:text-3xl font-bold whitespace-nowrap pb-10 pt-4">R$100.000,00</h3>
@@ -96,15 +96,15 @@ const Home = () => {
                 >
                   Aumentar meu Limite
                 </button>
-                <button className="w-full bg-red-700 disabled:bg-black text-white rounded-md py-2 mt-5 cursor-pointer" onClick={() => toast('TESTE')}>Bloquear cartão</button>
+                <button className="w-full bg-red-700 disabled:bg-black text-white rounded-md py-2 mt-5 cursor-pointer" onClick={() => toast('Cartão bloqueado!')}>Bloquear cartão</button>
               </CardContent>
             </Card>
           </div>
         </Card>
       </Box>
       <div className="md:flex flex-columns bg-neutral-50 h-full">
-        <Box sx={{ maxWidth: { xs: "500px", md: "100%", lg: "100%" }, marginRight: { md: "0.5rem", lg: "0.5rem" }, marginLeft: { md: "1.5rem", lg: "1.5rem" }, marginTop: { md: "1rem", lg: "1rem" } }}>
-          <Card sx={{ mb: '10px', height: 'auto', borderRadius: '1rem' }}>
+        <Box sx={{ maxWidth: { xs: "500px", md: "100%", lg: "100%" }, marginRight: { md: "0.5rem", lg: "0.5rem" }, marginLeft: { md: "1.5rem", lg: "1.5rem"}, marginTop: { md: "1rem", lg: "1rem" }, height: '98.5%' }}>
+          <Card sx={{ mb: '10px', borderRadius: '1rem', height: '100%'}}>
             <div>
             <p className='text-left font-bold text-2xl pb-2 pt-10 p-10'>Transferências/Pagamentos</p>
               <div className="grid grid-cols-3 flex justify-center items-center">
@@ -113,7 +113,7 @@ const Home = () => {
                   {/* <div className="grid grid-cols-2 gap-4"> */}
                     <Card sx={{ borderRadius: '1rem' }} className='cursor-pointer flex items-center justify-center p-8 grid grid-rows-2 m-4 h-36 bg-white'>
                       <FontAwesomeIcon icon={faRightLeft} className="md:w-6 h-6 m-auto text-pink-600" />
-                      <span className='ml-2 text-md font-bold whitespace-nowrap'>
+                      <span className='max-sm:text-xs max-lg:text-md ml-2 font-bold whitespace-wrap '>
                         Transferir
                       </span>
                     </Card>
@@ -121,7 +121,7 @@ const Home = () => {
                     <div  className="h-full">
                     <Card sx={{ borderRadius: '1rem'  }} className='cursor-pointer flex items-center justify-center p-8 grid grid-rows-2 m-4 h-36 bg-white '>
                       <FontAwesomeIcon icon={faBarcode} className="md:w-6 h-6  m-auto text-pink-600" />
-                      <span className='ml-2 text-md font-bold whitespace-nowrap'>
+                      <span className='max-sm:text-xs max-lg:text-md ml-2 font-bold whitespace-wrap'>
                         Pagar Boleto
                       </span>
                     </Card>
@@ -132,7 +132,7 @@ const Home = () => {
                   {/* <p className='text-left p-4 font-semibold text-xl pb-2 pt-7'>Recebimentos</p> */}
                     <Card sx={{ borderRadius: '1rem'  }} className='cursor-pointer flex items-center justify-center p-8 grid grid-rows-2 m-4 h-36 bg-white'>
                       <FontAwesomeIcon icon={faReceipt} className="md:w-6 h-6 m-auto text-pink-600" />
-                      <span className='ml-2 text-md font-bold whitespace-nowrap'>
+                      <span className='max-sm:text-xs max-lg:text-md ml-2 font-bold whitespace-nowrap'>
                         {/* Depositar PIX, Boleto ou TED
                       Definir valor e gerar qr code, chave, boleto e dados de TED */}
                         Depósitos
@@ -145,26 +145,27 @@ const Home = () => {
                 <div className="grid grid-cols-3 gap-3 flex justify-center items-center">
                   <Card sx={{ borderRadius: '1rem'  }} className='cursor-pointer flex items-center justify-center p-8 grid grid-rows-2 m-4 h-36 bg-white'>
                     <FontAwesomeIcon icon={faKey} className="md:w-6 h-6 m-auto text-pink-600" />
-                    <span className='text-md font-bold whitespace-nowrap'>
+                    <span className='max-sm:text-xs max-lg:text-md font-bold whitespace-nowrap'>
                       Chaves PIX
                     </span>
                   </Card>
                   <Card sx={{ borderRadius: '1rem' }} className='cursor-pointer flex items-center justify-center p-10 grid grid-rows-2 m-4 h-36 bg-white'>
                     <FontAwesomeIcon icon={faCopy} className="md:w-6 h-6 m-auto text-pink-600" />
-                    <span className='text-md font-bold whitespace-nowrap'>
-                      PIX copia e cola
+                    <span className='max-sm:text-xs max-2xl:text-sm lg:text-md font-bold whitespace-wrap'>
+                      PIX copia/cola
                     </span>
                   </Card>
                   <Card sx={{ borderRadius: '1rem'  }} className='cursor-pointer flex items-center justify-center p-10 grid grid-rows-2 m-4 h-36 bg-white'>
                     <FontAwesomeIcon icon={faRightLeft} className="md:w-6 h-6 m-auto text-pink-600" />
-                    <span className='text-md font-bold whitespace-nowrap'>
+                    <span className='max-sm:text-xs max-lg:text-md font-bold whitespace-wrap'>
                       Transferir PIX
                     </span>
                   </Card>
                 </div>
               </div>
               <p className='text-left font-bold text-2xl pb-2 pt-0 p-10'>Oferecemos para você</p>
-              <div className="flex grid grid-cols-3">
+              <hr></hr>
+              <div className="flex grid grid-cols-2">
                 <div className="rounded-full text-center pl-5 p-10">
                   <img className="rounded-full w-36 h-36 m-auto pb-3" src={bankSecurity}></img>
                   <span className='text-wrap ml-2 text-2xl font-semibold'>
@@ -180,15 +181,7 @@ const Home = () => {
                     Confiança
                   </span>
                 </div>
-                <div className="rounded-full text-center pl-5 p-10">
-                  <img className="rounded-full w-36 h-36 m-auto pb-3" src={happy}></img>
-                  <span className='ml-2 text-2xl font-semibold'>
-                    {/* No nosso banco você pode ver um histórico de todas as operações realizadas. */}
-                    Proteção
-                  </span>
-                </div>
               </div>
-              <hr></hr>
             </div>
             {/* <div className='cursor-pointer p-10'>
                 <FontAwesomeIcon icon={faKey}/>
@@ -198,8 +191,8 @@ const Home = () => {
               </div> */}
           </Card>
         </Box>
-        <Box sx={{ maxWidth: { xs: "500px", md: "100%", lg: "100%" }, marginRight: { md: "2rem", lg: "2rem" }, marginLeft: { md: "0.5rem", lg: "0.5rem" }, marginTop: { md: "1rem", lg: "1rem" } }}>
-          <Card sx={{ mb: '10px', height: '100vh', borderRadius: '1rem', padding:'1rem'}}>
+        <Box sx={{ maxWidth: { xs: "500px", md: "100%", lg: "100%" }, marginRight: { md: "2rem", lg: "2rem" }, marginLeft: { md: "0.5rem", lg: "0.5rem" }, marginTop: { md: "1rem", lg: "1rem" }, height: '98.5%' }}>
+          <Card sx={{ mb: '10px', borderRadius: '1rem', padding:'2rem', height: '100%'}}>
             <p className='text-left font-bold text-2xl pb-10 pt-6'>Histórico de recebimentos</p>
             <Timeline/>
           </Card>

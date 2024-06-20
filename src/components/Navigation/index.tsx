@@ -12,9 +12,9 @@ const Navigation = () => {
   };
 
   return (
-    <div className='flex bg-white-300 py-4 px-4 items-center justify-between h-16'>
+    <div className='flex cols-2 bg-white-300 py-4 px-4 items-center justify-between h-16 w-100%'>
       <div>
-        <div className='flex items-center gap-2 p-10'>
+        <div className='flex items-center gap-2 p-10 w-2'>
           <FontAwesomeIcon icon={faBuildingColumns} size='2x' />
           <h1 className='text-xs md:text-xl font-bold'>MyBank</h1>
           <div className='ml-10'>
