@@ -25,3 +25,20 @@ type UploadUserImage = {
 }
 
 type User = Account & AccountDetail
+
+type CreateComment = {
+  investmentId: number;
+  comment: string;
+}
+
+type InvestmentData = {
+  investment_id: number;
+  name: string;
+  description: string;
+}
+
+type InvestmentComment = {
+  account_id: number;
+  comment: string;
+  created_at: string;
+}
