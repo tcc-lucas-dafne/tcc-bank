@@ -49,22 +49,12 @@ function uploadDocument(formData: any) {
   }
 }
 
-function createLimitIncreaseRequest(requestedAmount: number) {
-  try {
-    return API.post("/limit/request", { requestedAmount })
-  } catch (err) {
-    console.error("createLimitIncreaseRequest: ", err);
-    throw err;
-  }
-}
-
 const UserService = {
   login,
   getUser,
   createUser,
   uploadDocument,
   uploadUserImage,
-  createLimitIncreaseRequest
 }
 
 export default UserService;

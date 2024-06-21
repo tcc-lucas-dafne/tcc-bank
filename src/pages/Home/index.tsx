@@ -11,12 +11,11 @@ import Graphic from "../../components/Graphic";
 import Timeline from "../../components/Timeline";
 import bankSecurity from '../../assets/happy_people.png';
 import aboutUs from '../../assets/colorful_people.png';
-import happy from '../../assets/happy.png';
 import { Modal, ModalDialog, DialogTitle, DialogContent, ModalClose, Typography } from '@mui/joy';
 import { useState } from "react";
 import CurrencyInput from 'react-currency-input-field';
 import { toast } from "react-toastify";
-import User from "../../services/account";
+import RequestService from "../../services/requests";
 
 const Home = () => {
   const { user } = useAppContext();
@@ -36,7 +35,7 @@ const Home = () => {
   const createIncreaseLimitRequest = async () => {
     try {
       setIsLoading(true);
-      await User.createLimitIncreaseRequest(newLimitAmount);
+      await RequestService.createRequest(newLimitAmount);
       toast.success("Solicitação realizada com sucesso!");
     } catch (err) {
       console.error('Err: ', err);

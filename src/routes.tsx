@@ -7,6 +7,7 @@ import { useAppContext } from './context';
 import Loading from './components/Loading';
 import UserUpdate from './pages/UserUpdate';
 import Investments from './pages/Investments';
+import Admin from './pages/Admin';
 
 const AppRoutes = () => {
   const { user } = useAppContext();
@@ -27,6 +28,7 @@ const AppRoutes = () => {
         <Route path="/login" element={isAuthenticated ? <Navigate to="/" replace /> : <Login />} />
         <Route path="/user" element={<UserUpdate />} />
         <Route path="/investments" element={<Investments />} />
+        <Route path="/admin" element={<Admin />} />
         <Route path="*" element={<Navigate to="/login" />} />
       </Routes>
     </>

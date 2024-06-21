@@ -42,3 +42,19 @@ type InvestmentComment = {
   comment: string;
   created_at: string;
 }
+
+type ReviewRequest = {
+  review: "approved" | "reproved", 
+  requestId: number
+}
+
+type UserRequest = {
+  id: number,
+  name: string,
+  email: string
+  account_id: number,
+  requested_amount: string,
+  request_date: string,
+  review_date: string | null,
+  status: "approved" | "pending" | "pending"
+}
