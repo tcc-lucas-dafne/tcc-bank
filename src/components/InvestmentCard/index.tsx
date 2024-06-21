@@ -25,11 +25,13 @@ const InvestmentCard = ({ investment }: { investment: InvestmentData }) => {
   }
 
   const handleExpandClick = async () => {
-    setExpanded(!expanded);
     setIsLoading(true);
 
-    await getInvestmentComments();
+    if (!expanded) {
+      await getInvestmentComments();
+    }
 
+    setExpanded(!expanded);
     setIsLoading(false);
   };
 
