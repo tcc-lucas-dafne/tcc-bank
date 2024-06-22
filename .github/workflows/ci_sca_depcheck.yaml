@@ -61,12 +61,6 @@ jobs:
         with:
           sarif_file: depcheck/dependency-check-report.sarif
 
-
-      - name: Upload SARIF results file
-        uses: github/codeql-action/upload-sarif@v3
-        with:
-          sarif_file: depcheck/dependency-check-report.sarif
-
       - name: Upload Test results
         uses: actions/upload-artifact@v4
         with:
