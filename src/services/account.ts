@@ -40,9 +40,31 @@ function uploadUserImage(data: UploadUserImage) {
   }
 }
 
+function getUserDocument(fileName: string) {
+  try {
+    return API.get(
+      "/upload/document", 
+      { 
+        responseType: 'blob',
+        params: { fileName } 
+      })
+  } catch (err) {
+    console.error("getUserDocument: ", err);
+    throw err;
+  }
+}
+
 function uploadDocument(formData: any) {
   try {
-    return API.post("/upload-document", formData)
+    return API.post(
+      "/upload/document",
+      formData,
+      {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      }
+    )
   } catch (err) {
     console.error("uploadDocument: ", err);
     throw err;
@@ -55,6 +77,7 @@ const UserService = {
   createUser,
   uploadDocument,
   uploadUserImage,
+  getUserDocument
 }
 
 export default UserService;

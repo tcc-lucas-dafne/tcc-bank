@@ -24,6 +24,7 @@
     "axios": "^1.6.8",
     "date-fns": "^3.6.0",
     "dotenv": "^16.4.5",
+    "file-saver": "^2.0.5",
     "octokit": "^4.0.2",
     "react": "^18.2.0",
     "react-currency-input-field": "^3.8.0",
@@ -60,6 +61,7 @@
     ]
   },
   "devDependencies": {
+    "@types/file-saver": "^2.0.7",
     "tailwindcss": "^3.4.3"
   }
 }

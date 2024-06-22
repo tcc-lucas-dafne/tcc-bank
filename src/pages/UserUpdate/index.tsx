@@ -5,15 +5,17 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-regular-svg-icons"
 import { toast } from "react-toastify";
 import { useNavigate } from 'react-router-dom';
+import { saveAs } from 'file-saver';
 
 const UserUpdate = () => {
-  const [file, setFile] = useState<File | null>(null);
   const { user } = useAppContext()
   const navigate = useNavigate();
 
-  const redirectToHome = () => {
-    navigate("/");
-  };
+  const [documentFile, setDocumentFile] = useState<File | null>(null);
+
+  const [isUserDataValid, setIsUserDataValid] = useState<boolean>(false);
+  const [isPasswordDataValid, setIsPasswordDataValid] = useState<boolean>(false);
+  const [fileContent, setFileContent] = useState('');
 
   const [userData, setUserData] = useState({
     imageUrl: '',
@@ -28,18 +30,7 @@ const UserUpdate = () => {
     confirmNewPassword: '',
   });
 
-  const [isUserDataValid, setIsUserDataValid] = useState<boolean>(false);
-  const [isPasswordDataValid, setIsPasswordDataValid] = useState<boolean>(false);
-
-  useEffect(() => {
-    const isUserDataFilled = userData.name && userData.email && userData.password;
-    setIsUserDataValid(!!isUserDataFilled);
-  }, [userData]);
-
-  useEffect(() => {
-    const isPasswordDataFilled = passwordData.currentPassword && passwordData.newPassword && passwordData.confirmNewPassword;
-    setIsPasswordDataValid(!!isPasswordDataFilled && (passwordData.newPassword === passwordData.confirmNewPassword));
-  }, [passwordData]);
+  const redirectToHome = () => navigate("/");
 
   const handleUserDataChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
@@ -75,28 +66,51 @@ const UserUpdate = () => {
     // TODO: Atualização de senha
   };
 
-  const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
-    if (event.target.files) {
-      setFile(event.target.files[0]);
-    }
-  };
-
-  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+  const handleDocumentSubmit = async (event: any) => {
     event.preventDefault();
-    if (!file) {
-      alert('Please select a file first!');
-      return;
-    }
+
+    if (!documentFile) return;
 
     const formData = new FormData();
-    formData.append('document', file);
+    formData.append('file', documentFile);
 
     try {
-      await UserService.uploadDocument(formData)
+      await UserService.uploadDocument(formData);
+      toast.success("Documento enviado com sucesso!");
     } catch (error) {
-      alert('Error uploading file');
+      toast.error("Erro ao enviar documento!");
     }
   };
+
+  const handleDocumentFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (file) {
+      setDocumentFile(file);
+    }
+  };
+
+  const handleViewDocument = async () => {
+    try {
+      if (!user?.account_id) return; 
+
+      const fileName = `user_${user.account_id}_document.pdf`;
+      const response = await UserService.getUserDocument(fileName);
+      saveAs(response.data, 'document.pdf');
+    } catch (error) {
+      console.error('Error viewing document:', error);
+      toast.error("Nenhum documento encontrado");
+    }
+  };
+
+  useEffect(() => {
+    const isUserDataFilled = userData.name && userData.email && userData.password;
+    setIsUserDataValid(!!isUserDataFilled);
+  }, [userData]);
+
+  useEffect(() => {
+    const isPasswordDataFilled = passwordData.currentPassword && passwordData.newPassword && passwordData.confirmNewPassword;
+    setIsPasswordDataValid(!!isPasswordDataFilled && (passwordData.newPassword === passwordData.confirmNewPassword));
+  }, [passwordData]);
 
   return (
     <div className="bg-neutral-50 overflow-y-auto">
@@ -120,6 +134,7 @@ const UserUpdate = () => {
                 type="url"
                 id="image-url"
                 name="imageUrl"
+                placeholder="Insira um link com a sua incrível imagem!"
                 value={userData.imageUrl}
                 onChange={handleUserDataChange}
                 className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -216,14 +231,28 @@ const UserUpdate = () => {
         </div>
 
         <div className="max-w-lg mt-10">
-          <form onSubmit={handleSubmit} className="md: bg-white shadow-md rounded-lg p-6 sm: m-1.5">
+          <form onSubmit={handleDocumentSubmit} className="md: bg-white shadow-md rounded-lg p-6 sm: m-1.5">
             <h1 className="text-2xl font-bold mb-4">Confirme sua identidade</h1>
             <p className="text-left pb-3">Envie o seu documento de identificação para garantirmos sua identidade.</p>
             <input
               type="file"
-              onChange={handleFileChange}
+              onChange={handleDocumentFileChange}
               className="w-full px-4 py-2 mb-4 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
+            <button
+              onClick={handleViewDocument}
+              className="w-full px-4 py-2 bg-blue-500 text-white rounded-md"
+            >
+              Visualizar Documento
+            </button>
+            <div className="mt-6">
+              {fileContent && (
+                <div className="mt-4 bg-gray-100 p-4 rounded-md">
+                  <h2 className="text-xl font-bold mb-2">File Content:</h2>
+                  <pre className="whitespace-pre-wrap">{fileContent}</pre>
+                </div>
+              )}
+            </div>
             <button
               type="submit"
               className="w-full px-4 py-2 bg-blue-500 text-white rounded-md"
