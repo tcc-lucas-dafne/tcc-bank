@@ -87,61 +87,61 @@ A malicious page can belong to a malicious website but also a trusted website wi
 * URL: https://hml-tcc-password-manager.vercel.app
   * Method: `GET`
   * Parameter: ``
-  * Attack: `origin: https://nlxDGSCb.com`
+  * Attack: `origin: https://2qeLR75Z.com`
   * Evidence: ``
   * Other Info: ``
 * URL: https://hml-tcc-password-manager.vercel.app/
   * Method: `GET`
   * Parameter: ``
-  * Attack: `origin: https://nlxDGSCb.com`
+  * Attack: `origin: https://2qeLR75Z.com`
   * Evidence: ``
   * Other Info: ``
 * URL: https://hml-tcc-password-manager.vercel.app/favicon.ico
   * Method: `GET`
   * Parameter: ``
-  * Attack: `origin: https://nlxDGSCb.com`
+  * Attack: `origin: https://2qeLR75Z.com`
   * Evidence: ``
   * Other Info: ``
 * URL: https://hml-tcc-password-manager.vercel.app/logo192.png
   * Method: `GET`
   * Parameter: ``
-  * Attack: `origin: https://nlxDGSCb.com`
+  * Attack: `origin: https://2qeLR75Z.com`
   * Evidence: ``
   * Other Info: ``
 * URL: https://hml-tcc-password-manager.vercel.app/manifest.json
   * Method: `GET`
   * Parameter: ``
-  * Attack: `origin: https://nlxDGSCb.com`
+  * Attack: `origin: https://2qeLR75Z.com`
   * Evidence: ``
   * Other Info: ``
 * URL: https://hml-tcc-password-manager.vercel.app/robots.txt
   * Method: `GET`
   * Parameter: ``
-  * Attack: `origin: https://nlxDGSCb.com`
+  * Attack: `origin: https://2qeLR75Z.com`
   * Evidence: ``
   * Other Info: ``
 * URL: https://hml-tcc-password-manager.vercel.app/sitemap.xml
   * Method: `GET`
   * Parameter: ``
-  * Attack: `origin: https://nlxDGSCb.com`
+  * Attack: `origin: https://2qeLR75Z.com`
   * Evidence: ``
   * Other Info: ``
 * URL: https://hml-tcc-password-manager.vercel.app/static
   * Method: `GET`
   * Parameter: ``
-  * Attack: `origin: https://nlxDGSCb.com`
+  * Attack: `origin: https://2qeLR75Z.com`
   * Evidence: ``
   * Other Info: ``
 * URL: https://hml-tcc-password-manager.vercel.app/static/css/main.f855e6bc.css
   * Method: `GET`
   * Parameter: ``
-  * Attack: `origin: https://nlxDGSCb.com`
+  * Attack: `origin: https://2qeLR75Z.com`
   * Evidence: ``
   * Other Info: ``
 * URL: https://hml-tcc-password-manager.vercel.app/static/js/main.9d8f87e7.js
   * Method: `GET`
   * Parameter: ``
-  * Attack: `origin: https://nlxDGSCb.com`
+  * Attack: `origin: https://2qeLR75Z.com`
   * Evidence: ``
   * Other Info: ``
 
@@ -757,61 +757,61 @@ The content was retrieved from a shared cache. If the response data is sensitive
   * Method: `GET`
   * Parameter: ``
   * Attack: ``
-  * Evidence: `Age: 511`
+  * Evidence: `Age: 26`
   * Other Info: `The presence of the 'Age' header indicates that a HTTP/1.1 compliant caching server is in use.`
 * URL: https://hml-tcc-password-manager.vercel.app/
   * Method: `GET`
   * Parameter: ``
   * Attack: ``
-  * Evidence: `Age: 3821`
+  * Evidence: `Age: 24`
   * Other Info: `The presence of the 'Age' header indicates that a HTTP/1.1 compliant caching server is in use.`
 * URL: https://hml-tcc-password-manager.vercel.app/
   * Method: `GET`
   * Parameter: ``
   * Attack: ``
-  * Evidence: `Age: 3824`
+  * Evidence: `Age: 26`
   * Other Info: `The presence of the 'Age' header indicates that a HTTP/1.1 compliant caching server is in use.`
 * URL: https://hml-tcc-password-manager.vercel.app/favicon.ico
   * Method: `GET`
   * Parameter: ``
   * Attack: ``
-  * Evidence: `Age: 99`
+  * Evidence: `Age: 26`
   * Other Info: `The presence of the 'Age' header indicates that a HTTP/1.1 compliant caching server is in use.`
 * URL: https://hml-tcc-password-manager.vercel.app/logo192.png
   * Method: `GET`
   * Parameter: ``
   * Attack: ``
-  * Evidence: `Age: 3777`
+  * Evidence: `Age: 26`
   * Other Info: `The presence of the 'Age' header indicates that a HTTP/1.1 compliant caching server is in use.`
 * URL: https://hml-tcc-password-manager.vercel.app/manifest.json
   * Method: `GET`
   * Parameter: ``
   * Attack: ``
-  * Evidence: `Age: 3755`
+  * Evidence: `Age: 26`
   * Other Info: `The presence of the 'Age' header indicates that a HTTP/1.1 compliant caching server is in use.`
 * URL: https://hml-tcc-password-manager.vercel.app/robots.txt
   * Method: `GET`
   * Parameter: ``
   * Attack: ``
-  * Evidence: `Age: 3778`
+  * Evidence: `Age: 26`
   * Other Info: `The presence of the 'Age' header indicates that a HTTP/1.1 compliant caching server is in use.`
 * URL: https://hml-tcc-password-manager.vercel.app/sitemap.xml
   * Method: `GET`
   * Parameter: ``
   * Attack: ``
-  * Evidence: `Age: 6`
+  * Evidence: `Age: 26`
   * Other Info: `The presence of the 'Age' header indicates that a HTTP/1.1 compliant caching server is in use.`
 * URL: https://hml-tcc-password-manager.vercel.app/static/css/main.f855e6bc.css
   * Method: `GET`
   * Parameter: ``
   * Attack: ``
-  * Evidence: `Age: 3823`
+  * Evidence: `Age: 26`
   * Other Info: `The presence of the 'Age' header indicates that a HTTP/1.1 compliant caching server is in use.`
 * URL: https://hml-tcc-password-manager.vercel.app/static/js/main.9d8f87e7.js
   * Method: `GET`
   * Parameter: ``
   * Attack: ``
-  * Evidence: `Age: 3823`
+  * Evidence: `Age: 26`
   * Other Info: `The presence of the 'Age' header indicates that a HTTP/1.1 compliant caching server is in use.`
 
 Instances: 10
