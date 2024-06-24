@@ -1,7 +1,7 @@
 name: PROD
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID_PROD }}
-  VERCEL_PROJECT_ID: prj_H7Y5WBK9Lix8oYgfooF6Ti0oKVTU
+  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID_PROD }}
 
 on: 
   push:
