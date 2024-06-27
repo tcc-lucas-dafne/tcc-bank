@@ -9,7 +9,8 @@ const CommentCard = ({ comment }: { comment: any }) => {
         <AccountCircleIcon />
       </Avatar>
       <CardContent className='flex flex-col items-start'>
-        <Typography variant="body1" component="p" dangerouslySetInnerHTML={{ __html: comment.comment }}>
+        <Typography variant="body1" component="p">
+          { comment.comment }
         </Typography>
         <Typography variant="caption" color="textSecondary">
           {new Date(comment.created_at).toLocaleDateString()}
